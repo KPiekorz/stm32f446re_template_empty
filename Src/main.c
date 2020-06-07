@@ -39,10 +39,12 @@ int main(void)
 	while(1){
 
 		// blink led
-		GPIOA->ODR |= (1<<5);
+//		GPIOA->ODR |= (1<<5);
+		SET_BIT(GPIOA->ODR, 1<<5);
 		for(i=1000000; i; i--);
 
-		GPIOA->ODR &= ~(1<<5);
+//		GPIOA->ODR &= ~(1<<5);
+		CLEAR_BIT(GPIOA->ODR, 1<<5);
 		for(i=0; i<1000000; i++);
 
 	}
